@@ -33,8 +33,10 @@ export default function About() {
                 <div><h2></h2></div>
                 <div><h3></h3></div>
 
+                <div class="Carousel-area">
                 <img src={'/icons/leftArrow.png'} />
-                <img src={'/icons/rightArrow.png'} />
+                    <img src={'/icons/rightArrow.png'} />
+                </div>
                 {/* <carouselImage height="200px" background-repeat: "no-repeat"></carouselImage> */}
 
                 <div>
@@ -48,8 +50,8 @@ export default function About() {
                     </ul>
                 </div>
 
-                <Link href='/'><img src={'icons/upwardArrow.png'} /></Link>
-                <Link href='contact'><img src={'icons/downwardArrow.png'} /></Link>
+                <a><span><img src={'icons/upwardArrow.png'} /></span></a>
+                <a><span><img src={'icons/downwardArrow.png'} /></span></a>
 
 
             </main>

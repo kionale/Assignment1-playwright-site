@@ -16,6 +16,9 @@ export default function Home() {
         <meta property="og:title" content="BCIT Digital Design and Development Diploma" />
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <img src={'icons/menu-icon.png'} width="50px"></img>
+      <img src={'icons/graduation-hat.png'} width="60px"></img>
+
       <main className={styles.main}>
         <header>
           <h1>An investment in knowledge pays the best interest.</h1>
