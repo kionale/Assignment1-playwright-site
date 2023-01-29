@@ -18,7 +18,7 @@ export default function Contact() {
         <>
             <title>Contact Us</title>
             <meta name="author" content="MDIA 2109"></meta>
-            <meta property="og:title" content="Assignment #1 - About Us Page" />
+            <meta property="og:title" content="Assignment #1 - Contact Us Page" />
             <meta property="og:title" content="BCIT Digital Design and Development Diploma" />
             <link rel="icon" href='/favicon.png' />
 
@@ -50,24 +50,25 @@ export default function Contact() {
                                         // className={styles.input-form}
                                         type="text"
                                         lastName={lastName}
+                                        email={email}
                                         placeholder={placeholderLast}
                                         minLength="3"
                                         maxLength="25"
                                         required
                                     />
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <label>Email:</label>
                                     <input
                                         // className={styles.input-form}
                                         type="text"
-                                        lastName={lastName}
+                                        email={email}
                                         placeholder={placeholderEmail}
                                         minLength="3"
                                         maxLength="40"
                                         required
                                     />
-                                </tr>
+                                </tr> */}
                             </table>
                         </fieldset>
                     </form>

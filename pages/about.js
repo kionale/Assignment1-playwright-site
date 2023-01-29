@@ -34,8 +34,13 @@ export default function About() {
                 <div><h3></h3></div>
 
                 <div class="Carousel-area">
-                <img src={'/icons/leftArrow.png'} />
+                    <img src={'/icons/leftArrow.png'} />
                     <img src={'/icons/rightArrow.png'} />
+                   {/*  <div id="carouselImage" style={{ height: 200px, background-repeat: no-repeat, background-size: cover, display: flex, justify-content: center, align-items: center, margin: 40px 0px }}>
+                        <div id="testOnImageHere" style="background-color: rgba(16, 46, 53, 0.5); padding: 10px; margin: 0px 50px;">
+
+                        </div>
+                    </div> */}
                 </div>
                 {/* <carouselImage height="200px" background-repeat: "no-repeat"></carouselImage> */}
 
