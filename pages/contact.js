@@ -19,7 +19,7 @@ export default function Contact() {
             <title>Contact Us</title>
             <meta name="author" content="MDIA 2109"></meta>
             <meta property="og:title" content="Assignment #1 - Contact Us Page" />
-            <meta property="og:title" content="BCIT Digital Design and Development Diploma" />
+            <meta property="og:description" content="BCIT Digital Design and Development Diploma" />
             <link rel="icon" href='/favicon.png' />
 
             <main>
@@ -31,36 +31,45 @@ export default function Contact() {
                     <form>
                         <fieldset>
                             <table>
-                                <tr>
-                                    <label>First Name:</label>
-                                    <input
-                                        // className={styles.input-form}
-                                        type="text"
-                                        firstName={firstName}
-                                        placeholder={placeholderFirst}
-                                        minLength="3"
-                                        maxLength="25"
-                                        required
-                                    />
+                                <thead>
+                                    <tr>
 
-                                </tr>
+                                        <label>First Name:</label>
+                                        <input
+                                            // className={styles.input-form}
+                                            id="firstName"
+                                            type="text"
+                                            firstName={firstName}
+                                            placeholder={placeholderFirst}
+                                            minLength="3"
+                                            maxLength="25"
+                                            required
+                                        />
+
+                                    </tr>
+                                </thead>
+
+                                <thead>
+                                    <tr>
+                                        <label>Last Name:</label>
+                                        <input
+                                            // className={styles.input-form}
+                                            id="lastName"
+                                            type="text"
+                                            lastName={lastName}
+                                            email={email}
+                                            placeholder={placeholderLast}
+                                            minLength="3"
+                                            maxLength="25"
+                                            required
+                                        />
+                                    </tr>
+                                </thead>
                                 <tr>
-                                    <label>Last Name:</label>
-                                    <input
-                                        // className={styles.input-form}
-                                        type="text"
-                                        lastName={lastName}
-                                        email={email}
-                                        placeholder={placeholderLast}
-                                        minLength="3"
-                                        maxLength="25"
-                                        required
-                                    />
-                                </tr>
-                                {/* <tr>
                                     <label>Email:</label>
                                     <input
                                         // className={styles.input-form}
+                                        id="email"
                                         type="text"
                                         email={email}
                                         placeholder={placeholderEmail}
@@ -68,7 +77,8 @@ export default function Contact() {
                                         maxLength="40"
                                         required
                                     />
-                                </tr> */}
+                                </tr>
+
                             </table>
                         </fieldset>
                     </form>

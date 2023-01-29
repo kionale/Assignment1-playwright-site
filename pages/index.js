@@ -13,7 +13,7 @@ export default function Home() {
         <title>Home</title>
         <meta name="author" content="MDIA 2109" />
         <meta property="og:title" content="Assignment #1 - Home Page" />
-        <meta property="og:title" content="BCIT Digital Design and Development Diploma" />
+        <meta property="og:description" content="BCIT Digital Design and Development Diploma" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <img src={'icons/menu-icon.png'} width="50px"></img>
@@ -23,9 +23,9 @@ export default function Home() {
         <header>
           <h1>An investment in knowledge pays the best interest.</h1>
         </header>
-        <paragraph>Different than a college or university, the British Columbia Institute of Technology offers practical, flexible, applied education with instructors who have direct, hands-on experience in their field.</paragraph>
-        <a><button>More About Us</button></a>
-        <a><button>Contact Us</button></a>
+        <p>Different than a college or university, the British Columbia Institute of Technology offers practical, flexible, applied education with instructors who have direct, hands-on experience in their field.</p>
+        <a href='/about'><button>More About Us</button></a>
+        <a href='/contact'><button>Contact Us</button></a>
         <a><span><img src={'icons/downwardArrow.png'} /></span></a>
       </main>
     </>

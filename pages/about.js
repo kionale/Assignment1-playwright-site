@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/About.module.css'
 import Link from 'next/link'
 
 export default function About() {
@@ -11,7 +11,7 @@ export default function About() {
                 <title>About Us</title>
                 <meta name="author" content="MDIA 2109"></meta>
                 <meta property="og:title" content="Assignment #1 - About Us Page" />
-                <meta property="og:title" content="BCIT Digital Design and Development Diploma" />
+                <meta property="og:description" content="BCIT Digital Design and Development Diploma" />
                 <link rel="icon" href='/favicon.png' />
             </head>
 
@@ -20,7 +20,7 @@ export default function About() {
                     <div><h1></h1></div>
                     <div><h1></h1></div>
                 </header>
-                <paragraph>
+                <p>
                     <div><p></p></div>
                     <div><p></p></div>
                     <div><p></p></div>
@@ -28,21 +28,25 @@ export default function About() {
                     <div><p></p></div>
                     <div><p></p></div>
                     <div><p></p></div>
-                </paragraph>
+                </p>
                 <div><h2></h2></div>
                 <div><h2></h2></div>
                 <div><h3></h3></div>
 
-                <div class="Carousel-area">
-                    <img src={'/icons/leftArrow.png'} />
-                    <img src={'/icons/rightArrow.png'} />
-                   {/*  <div id="carouselImage" style={{ height: 200px, background-repeat: no-repeat, background-size: cover, display: flex, justify-content: center, align-items: center, margin: 40px 0px }}>
-                        <div id="testOnImageHere" style="background-color: rgba(16, 46, 53, 0.5); padding: 10px; margin: 0px 50px;">
 
-                        </div>
-                    </div> */}
+                <div id="carouselImage">
+                    <img src={"/carousel-images/0.jpg"} />
+                    <img src={"/carousel-images/1.jpg"} />
+                    <img src={"/carousel-images/2.jpg"} />
+                    <img src={"/carousel-images/3.jpg"} />
+                    <img src={"/carousel-images/4.jpg"} />
+                    <img src={"/carousel-images/5.jpg"} />
                 </div>
-                {/* <carouselImage height="200px" background-repeat: "no-repeat"></carouselImage> */}
+
+
+
+                <div id="testOnImageHere"></div>
+
 
                 <div>
                     <ul>
