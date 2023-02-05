@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import Link from 'next/link'
 import { use, useState } from 'react'
 import styles from '@/styles/Contact.module.css'
+import Navbar from '@/components/Navbar'
 
 export default function Contact() {
 
@@ -23,6 +24,7 @@ export default function Contact() {
             <link rel="icon" href='/favicon.png' />
 
             <main>
+                <Navbar />
                 <div><h1>Contact Us</h1></div>
 
                 <div><p>Want to discuss? Let's chat!</p></div>

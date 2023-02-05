@@ -1,4 +1,42 @@
-#carouselImage{
+.body{
+  background-color: var(--dark-blue);
+  height:100vh;
+ 
+
+}
+
+.heading_section{
+  margin:2rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  color:var(--font-white);
+}
+
+.dividing_lines{
+  width:25%;
+  height:0.2rem;
+  background-color: var(--primary-cl);
+  border:none;
+  margin:0 4rem;
+
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:15vh 25vw;
+}
+
+.paragraph{
+  text-align: left;
+  color:var(--font-white);
+  font-family: var(--font-family);
+  margin:0.5rem;
+}
+#carouselImage {
         height: 200px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -8,6 +46,9 @@
         margin: 40px 0px;
       }
 
+.image_slide{
+  width:33rem;
+}
 
 #testOnImageHere{
     background-color: rgba(16, 46, 53, 0.5); 
