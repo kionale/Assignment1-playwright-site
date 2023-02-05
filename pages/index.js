@@ -16,13 +16,18 @@ export default function Home() {
         <meta property="og:description" content="BCIT Digital Design and Development Diploma" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <img src={'icons/menu-icon.png'} width="50px"></img>
-      <img src={'icons/graduation-hat.png'} width="60px"></img>
+
 
       <main className={styles.main}>
+        <nav className={styles.navbar}>
+          <img class={styles.navbar_icon} src={'icons/menu-icon.png'} ></img>
+          <img class={styles.navbar_icon} src={'icons/graduation-hat.png'} ></img>
+        </nav>
         <header>
-          <h1>An investment in knowledge pays the best interest.</h1>
+
+          <h1 className={styles.heading}>An investment in <br></br>knowledge pays the best <br></br>interest.</h1>
         </header>
+        <hr className={styles.breakLine}></hr>
         <p>Different than a college or university, the British Columbia Institute of Technology offers practical, flexible, applied education with instructors who have direct, hands-on experience in their field.</p>
         <a href='/about'><button>More About Us</button></a>
         <a href='/contact'><button>Contact Us</button></a>
