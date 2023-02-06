@@ -1,11 +1,68 @@
-#firstName{
+.main{
+    background-image: url(../public/background-images/backgroundMountainUpsideDown.jpg);
+    height:100vh;
+    width:100vw;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color:var(--font-white);
+    font-family: var(--font-family);
+}
+
+.heading_section{
+  margin:2rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dividing_lines{
+  width:25%;
+  height:0.2rem;
+  background-color: var(--primary-cl);
+  border:none;
+  margin:0 4rem;
 
 }
 
-#lastName{
-
+.subheading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:9rem;
 }
 
-#email{
+.heading{
+    width:fit-content;
+}
+
+.form_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:4rem;
     
+}
+
+.fieldset{
+    border: 1px solid var(--dark-blue);
+    padding:2rem;
+
+}
+
+.input_field{
+    width:18rem;
+}
+
+.label{
+    text-align: left;
+}
+.table_col{
+    display: flex;
+}
+
+.button{
+    width:5rem;
+    padding:0.5 1rem;
+    margin:0 auto;
 }

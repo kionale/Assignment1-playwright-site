@@ -1,6 +1,8 @@
 .body{
   background-color: var(--dark-blue);
   height:100vh;
+   color:var(--font-white);
+    font-family: var(--font-family);
  
 
 }
@@ -10,8 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--font-family);
-  color:var(--font-white);
+
 }
 
 .dividing_lines{
@@ -32,11 +33,10 @@
 
 .paragraph{
   text-align: left;
-  color:var(--font-white);
-  font-family: var(--font-family);
   margin:0.5rem;
 }
-#carouselImage {
+
+.carouselImage {
         height: 200px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -46,12 +46,60 @@
         margin: 40px 0px;
       }
 
-.image_slide{
-  width:33rem;
+.carouselImage >img{
+  width:25rem;
+  height:13rem;
+  object-fit: cover;
+  position: relative;
+
+
 }
 
-#testOnImageHere{
+
+
+.testOnImageHere{
     background-color: rgba(16, 46, 53, 0.5); 
     padding: 10px; 
     margin: 0px 50px;
+    width:fit-content;
+    height:fit-content;
+}
+
+.image_slide{
+  display: flex;
+  position:absolute;
+  justify-content: center;
+  align-items: center;
+  height:1.35rem;
+  bottom:25rem;
+
+  
+}
+
+.arrows{
+    width:2rem;
+
+}
+
+.departments{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:var(--dark-blue);
+
+  
+}
+
+
+.department_title{
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.departments_name > li{
+  list-style: none;
+  margin:1rem 0;
+
+
 }

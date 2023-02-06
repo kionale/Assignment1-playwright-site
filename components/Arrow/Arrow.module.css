@@ -4,6 +4,7 @@
     position:fixed;
     display:flex;
     flex-direction: column;
+    background-color: transparent;
 }
 
 .arrow > a > span >img{

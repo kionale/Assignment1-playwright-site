@@ -40,23 +40,33 @@ export default function About() {
                     <div><p className={styles.paragraph}>Tours run weekdays September to May, on our Burnaby campus. See BCIT in person and get a taste of campus life.</p></div>
                 </div>
 
-                <div id="carouselImage">
-                    <img className={styles.image_slide} src={"/carousel-images/0.jpg"} />
+                <div id="carouselImage" className={styles.carouselImage}>
+                    <img className={styles.image} src={"/carousel-images/0.jpg"} />
                     {/* <img src={"/carousel-images/1.jpg"} />
                     <img src={"/carousel-images/2.jpg"} />
                     <img src={"/carousel-images/3.jpg"} />
                     <img src={"/carousel-images/4.jpg"} />
                     <img src={"/carousel-images/5.jpg"} /> */}
+
+                    <div className={styles.image_slide}>
+                        <img className={styles.arrows} src='icons/leftArrow.png'></img>
+                        <div id="testOnImageHere" className={styles.testOnImageHere}>Champion Diversity</div>
+                        <img className={styles.arrows} src='icons/rightArrow.png'></img>
+                    </div>
+
                 </div>
 
-                <div id="testOnImageHere"></div>
+                
 
 
-                <div>
-                    <ul>
-                        <li>Applied & Natural Sciences</li>
-                        <li>Business & Media</li>
-                        <li>Computing & IT</li>
+                <div className={styles.departments}>
+                    <hr className={styles.dividing_line}></hr>
+                    <h1 className={styles.department_title}>departments</h1>
+                    <hr className={styles.dividing_line}></hr>
+                    <ul className={styles.departments_name} >
+                        <li >Applied & Natural Sciences</li>
+                        <li >Business & Media</li>
+                        <li >Computing & IT</li>
                         <li>Engineering</li>
                         <li>Health Sciences</li>
                         <li>Trades & Apprenticeships</li>

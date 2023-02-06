@@ -23,70 +23,85 @@ export default function Contact() {
             <meta property="og:description" content="BCIT Digital Design and Development Diploma" />
             <link rel="icon" href='/favicon.png' />
 
-            <main>
+            <main className={styles.main}>
                 <Navbar />
-                <div><h1>Contact Us</h1></div>
+                <header className={styles.heading_section}>
+                    <hr className={styles.dividing_lines}></hr>
+                    <div className={styles.heading}><h1>Contact Us</h1></div>
+                    <hr className={styles.dividing_lines}></hr>
+                </header>
+                <div className={styles.subheading}>
+                    <p >Want to discuss? Let's chat!</p>
+                </div>
 
-                <div><p>Want to discuss? Let's chat!</p></div>
-
-                <div>
+                <div className={styles.form_section}>
                     <form>
-                        <fieldset>
+                        <fieldset className={styles.fieldset}>
                             <table>
                                 <thead>
-                                    <tr>
-
-                                        <label>First Name:</label>
-                                        <input
-                                            // className={styles.input-form}
-                                            id="firstName"
-                                            type="text"
-                                            firstName={firstName}
-                                            placeholder={placeholderFirst}
-                                            minLength="3"
-                                            maxLength="25"
-                                            required
-                                        />
-
+                                    <tr >
+                                        <th scope="col" className={styles.label}>First Name:</th>
+                                        <th scope="col" className={styles.label}>Last Name:</th>
                                     </tr>
                                 </thead>
 
+                                <tbody>
+                                    <tr>
+                                        <td >
+                                            <input
+                                                className={styles.input_field}
+                                                id="firstName"
+                                                type="text"
+                                                firstName={firstName}
+                                                placeholder={placeholderFirst}
+                                                minLength="3"
+                                                maxLength="25"
+                                                required
+                                            />
+                                        </td>
+
+                                        <td>
+                                            <input
+                                                className={styles.input_field}
+                                                id="lastName"
+                                                type="text"
+                                                lastName={lastName}
+                                                email={email}
+                                                placeholder={placeholderLast}
+                                                minLength="3"
+                                                maxLength="25"
+                                                required
+                                            />
+                                        </td>
+                                    </tr>
+                                </tbody>
                                 <thead>
-                                    <tr>
-                                        <label>Last Name:</label>
-                                        <input
-                                            // className={styles.input-form}
-                                            id="lastName"
-                                            type="text"
-                                            lastName={lastName}
-                                            email={email}
-                                            placeholder={placeholderLast}
-                                            minLength="3"
-                                            maxLength="25"
-                                            required
-                                        />
-                                    </tr>
+                                    <tr><th className={styles.label}>Email:</th></tr>
                                 </thead>
-                                <tr>
-                                    <label>Email:</label>
-                                    <input
-                                        // className={styles.input-form}
-                                        id="email"
-                                        type="text"
-                                        email={email}
-                                        placeholder={placeholderEmail}
-                                        minLength="3"
-                                        maxLength="40"
-                                        required
-                                    />
-                                </tr>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <input
+                                                className={styles.input_field}
+                                                id="email"
+                                                type="text"
+                                                email={email}
+                                                placeholder={placeholderEmail}
+                                                minLength="3"
+                                                maxLength="40"
+                                                required
+                                            />
+                                        </td>
+                                    </tr>
+                                </tfoot>
 
                             </table>
+
                         </fieldset>
                     </form>
                 </div>
 
-                <button type="submit"> Submit</button>
+                <button type="submit" className={styles.button} > Submit</button>
             </main>
 
         </>
