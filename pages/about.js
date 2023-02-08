@@ -5,8 +5,35 @@ import styles from '@/styles/About.module.css'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Arrow from '@/components/Arrow'
+import ToggleMenu from '@/components/ToggleMenu'
+import { useState, useEffect } from 'react'
+import data from '../data/caption.json'
 
 export default function About() {
+    const [data, setData] = useState([...info]);
+    const [count, setCount] = useState(0);
+    console.log(info);
+
+    //execute this map function everytime it renders if the value of count has changed
+    useEffect(() => {
+        if (count > 4)
+            setCount(0)
+
+        if (count < 0)
+            setCount(4)
+
+        data && data.map((item) => {
+            if (item.index = count) {
+                const caption = document.querySelector('#testOnImageHere')
+                caption.innerHTML = item.text;
+
+
+
+            }
+        })
+
+    }, [count]
+    )
     return (
         <>
             <head>
@@ -18,6 +45,7 @@ export default function About() {
             </head>
 
             <main className={styles.body}>
+                <ToggleMenu />
                 <Navbar />
                 <header>
                     <div className={styles.heading_section}>
@@ -49,20 +77,20 @@ export default function About() {
                     <img src={"/carousel-images/5.jpg"} /> */}
 
                     <div className={styles.image_slide}>
-                        <img className={styles.arrows} src='icons/leftArrow.png'></img>
-                        <div id="testOnImageHere" className={styles.testOnImageHere}>Champion Diversity</div>
-                        <img className={styles.arrows} src='icons/rightArrow.png'></img>
+                        <img className={styles.arrows} onClick={count => setCount(count + 1)} src='icons/leftArrow.png'></img>
+                        <div id="testOnImageHere" className={styles.testOnImageHere}>{caption}</div>
+                        <img className={styles.arrows} onClick={count => setCount(count - 1)} src='icons/rightArrow.png'></img>
                     </div>
 
                 </div>
 
-                
+
 
 
                 <div className={styles.departments}>
-                    <hr className={styles.dividing_line}></hr>
+                    <hr className={styles.dividing_lines}></hr>
                     <h1 className={styles.department_title}>departments</h1>
-                    <hr className={styles.dividing_line}></hr>
+                    <hr className={styles.dividing_lines}></hr>
                     <ul className={styles.departments_name} >
                         <li >Applied & Natural Sciences</li>
                         <li >Business & Media</li>

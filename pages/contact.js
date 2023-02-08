@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { use, useState } from 'react'
 import styles from '@/styles/Contact.module.css'
 import Navbar from '@/components/Navbar'
+import ToggleMenu from '@/components/ToggleMenu'
+
 
 export default function Contact() {
 
@@ -24,6 +26,7 @@ export default function Contact() {
             <link rel="icon" href='/favicon.png' />
 
             <main className={styles.main}>
+                <ToggleMenu />
                 <Navbar />
                 <header className={styles.heading_section}>
                     <hr className={styles.dividing_lines}></hr>
@@ -47,32 +50,35 @@ export default function Contact() {
 
                                 <tbody>
                                     <tr>
-                                        <td >
+                                        <th >
                                             <input
                                                 className={styles.input_field}
                                                 id="firstName"
                                                 type="text"
                                                 firstName={firstName}
+                                                pattern="[A-Z]{1}[a-z]{2,10}"
+                                                title="The first letter should be uppercase"
                                                 placeholder={placeholderFirst}
                                                 minLength="3"
                                                 maxLength="25"
                                                 required
                                             />
-                                        </td>
+                                        </th>
 
-                                        <td>
+                                        <th>
                                             <input
                                                 className={styles.input_field}
                                                 id="lastName"
                                                 type="text"
                                                 lastName={lastName}
-                                                email={email}
+                                                pattern="[A-Z]{1}[a-z]{2,10}"
+                                                title="The first letter should be uppercase"
                                                 placeholder={placeholderLast}
                                                 minLength="3"
                                                 maxLength="25"
                                                 required
                                             />
-                                        </td>
+                                        </th>
                                     </tr>
                                 </tbody>
                                 <thead>
@@ -80,18 +86,20 @@ export default function Contact() {
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <td>
+                                        <th>
                                             <input
                                                 className={styles.input_field}
                                                 id="email"
                                                 type="text"
                                                 email={email}
+                                                pattern="[/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/"
+                                                title="The first letter should be uppercase"
                                                 placeholder={placeholderEmail}
                                                 minLength="3"
                                                 maxLength="40"
                                                 required
                                             />
-                                        </td>
+                                        </th>
                                     </tr>
                                 </tfoot>
 
@@ -100,7 +108,68 @@ export default function Contact() {
                         </fieldset>
                     </form>
                 </div>
+               
 
+                {/*  import React, {useState} from "react";
+const ContactForm = () => {
+  const [firstName, setFirstName] = useState("");
+                const [lastName, setLastName] = useState("");
+                const [email, setEmail] = useState("");
+                const [showSubmit, setShowSubmit] = useState(false);
+
+  const handleFirstNameChange = (event) => {
+                    setFirstName(event.target.value);
+                checkFormCompletion();
+  };
+
+  const handleLastNameChange = (event) => {
+                    setLastName(event.target.value);
+                checkFormCompletion();
+  };
+
+  const handleEmailChange = (event) => {
+                    setEmail(event.target.value);
+                checkFormCompletion();
+  };
+
+  const checkFormCompletion = () => {
+    if (firstName && lastName && email) {
+                    setShowSubmit(true);
+    } else {
+                    setShowSubmit(false);
+    }
+  };
+
+                return (
+                <form>
+                    <input
+                        type="text"
+                        placeholder="First Name"
+                        value={firstName}
+                        onChange={handleFirstNameChange}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Last Name"
+                        value={lastName}
+                        onChange={handleLastNameChange}
+                    />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={handleEmailChange}
+                    />
+                    {showSubmit && (
+                        <button type="submit">Submit</button>
+                    )}
+                </form>
+                );
+};
+
+                export default ContactForm; */}
+
+                {/* <button type="submit" onClick={() => CheckLogin()} className={styles.buttonSubmit}>submit</button> */}
                 <button type="submit" className={styles.button} > Submit</button>
             </main>
 

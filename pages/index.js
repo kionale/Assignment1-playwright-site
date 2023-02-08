@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Arrow from '@/components/Arrow'
+import ToggleMenu from '@/components/ToggleMenu'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,8 +23,9 @@ export default function Home() {
 
 
       <main className={styles.main}>
-  
+        <ToggleMenu />
         <Navbar />
+        
         <div className={styles.container}>
         <header>
           <h1 className={styles.heading}>An investment in <br></br>knowledge pays the best <br></br>interest.</h1>

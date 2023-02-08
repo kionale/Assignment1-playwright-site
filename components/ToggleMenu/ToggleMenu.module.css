@@ -1,0 +1,48 @@
+.main{
+    font-family: var(--font-family);
+    color:var(--font-white); 
+}
+
+.hamburgerMenu{
+  width:3.5rem;
+  object-fit: contain;
+  margin:3rem 5rem;
+  position: absolute;
+ 
+}
+
+.menuBackground{
+    max-width:15rem;
+    object-fit: contain;
+    margin-top: 0;
+    z-index: 2;
+    position:absolute;
+
+}
+
+
+
+.exit{
+    width: 4rem;
+    color:var(--font-white);
+    top:3rem;
+    left:4rem;
+    position: absolute;
+    z-index: 3;
+    font-weight: bolder;
+
+}
+
+.navList{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    top:4rem;
+    left:7.5rem;
+    position:absolute;
+    gap:1rem;
+    z-index: 3;
+    text-align: center;
+    
+
+}

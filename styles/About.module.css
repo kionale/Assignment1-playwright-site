@@ -1,10 +1,6 @@
 .body{
   background-color: var(--dark-blue);
-  height:100vh;
-   color:var(--font-white);
-    font-family: var(--font-family);
- 
-
+  
 }
 
 .heading_section{
@@ -36,33 +32,22 @@
   margin:0.5rem;
 }
 
+
 .carouselImage {
-        height: 200px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 40px 0px;
-      }
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0px;
+  position: relative;
+}
 
 .carouselImage >img{
   width:25rem;
   height:13rem;
   object-fit: cover;
-  position: relative;
-
-
-}
-
-
-
-.testOnImageHere{
-    background-color: rgba(16, 46, 53, 0.5); 
-    padding: 10px; 
-    margin: 0px 50px;
-    width:fit-content;
-    height:fit-content;
 }
 
 .image_slide{
@@ -71,10 +56,23 @@
   justify-content: center;
   align-items: center;
   height:1.35rem;
-  bottom:25rem;
+  bottom:7rem;
+  position: absolute;
 
   
 }
+
+
+.testOnImageHere{
+    background-color: rgba(16, 46, 53, 0.5); 
+    padding: 10px; 
+    margin: 0px 50px;
+    width:fit-content;
+    height:fit-content;
+    
+}
+
+
 
 .arrows{
     width:2rem;
@@ -86,10 +84,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color:var(--dark-blue);
+  color:var(--font-white);
 
   
 }
+
 
 
 .department_title{
