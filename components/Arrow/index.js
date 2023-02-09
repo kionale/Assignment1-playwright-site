@@ -5,17 +5,17 @@ export default function Arrow({
     page = "home",
 }) {
     return (
-        
-            page.toLowerCase() === "home" ?
+
+        page.toLowerCase() === "home" ?
             <div className={styles.arrow}>
-                <a><span><img src={'icons/downwardArrow.png'} /></span></a>
+                <a href='/about'><span><img src={'icons/downwardArrow.png'} /></span></a>
             </div> :
             page.toLowerCase() === "about" ?
-            <div className={styles.arrow}>
-                <a><span><img src={'icons/upwardArrow.png'} /></span></a>
-                <a><span><img src={'icons/downwardArrow.png'} /></span></a>
+                <div className={styles.arrow}>
+                    <a href='/'><span><img src={'icons/upwardArrow.png'} /></span></a>
+                    <a href='/contact'><span><img src={'icons/downwardArrow.png'} /></span></a>
                 </div> :
-                page.toLocaleLowerCase() === "contact" ?
+                page.toLowerCase() === "contact" ?
                     <div className={styles.arrow}>
                         <a href="/about"><span ><img src={'icons/upwardArrow.png'} /></span></a>
                     </div> :
@@ -23,6 +23,6 @@ export default function Arrow({
                         <a href="/" ><span ><img src={'icons/downwardArrow.png'} /></span></a>
                     </div>
 
-       
+
     )
 }

@@ -1,27 +1,27 @@
 [
     {
-        "index":0,
-        "text":"Achieve Excellence"
+        "id":0,
+        "value":"Achieve Excellence"
     },
 
     {
-        "index":1,
-        "text":"Embrace Innovation"
+        "id":1,
+        "value":"Embrace Innovation"
     },
     
     {
-        "index":2,
-        "text":"Champion Diversity"
+        "id":2,
+        "value":"Champion Diversity"
     },
 
     {
-        "index":3,
-        "text":"Pursue Collaboration"
+        "id":3,
+        "value":"Pursue Collaboration"
     },
 
     {
-        "index":4,
-        "text":"Engage With Respect"
+        "id":4,
+        "value":"Engage With Respect"
     }
     
 ]

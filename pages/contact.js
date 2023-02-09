@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { use, useState } from 'react'
 import styles from '@/styles/Contact.module.css'
 import Navbar from '@/components/Navbar'
+import Arrow from '@/components/Arrow'
 import ToggleMenu from '@/components/ToggleMenu'
 
 
@@ -171,6 +172,7 @@ const ContactForm = () => {
 
                 {/* <button type="submit" onClick={() => CheckLogin()} className={styles.buttonSubmit}>submit</button> */}
                 <button type="submit" className={styles.button} > Submit</button>
+                <Arrow page = "Contact" />
             </main>
 
         </>

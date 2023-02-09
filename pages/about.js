@@ -7,33 +7,36 @@ import Navbar from '@/components/Navbar'
 import Arrow from '@/components/Arrow'
 import ToggleMenu from '@/components/ToggleMenu'
 import { useState, useEffect } from 'react'
-import data from '../data/caption.json'
+import data from '../data/words.json'
+import next from 'next'
 
 export default function About() {
-    const [data, setData] = useState([...info]);
+    const [info, setInfo] = useState([...data]);
     const [count, setCount] = useState(0);
-    console.log(info);
+    console.log(data);
 
-    //execute this map function everytime it renders if the value of count has changed
     useEffect(() => {
-        if (count > 4)
-            setCount(0)
+        if (count > 4) {
+            setCount(0);
+        }
+        if (count < 0) {
+            setCount(4);
+        }
 
-        if (count < 0)
-            setCount(4)
-
-        data && data.map((item) => {
-            if (item.index = count) {
-                const caption = document.querySelector('#testOnImageHere')
-                caption.innerHTML = item.text;
-
-
+        info && info.map((item) => {
+            if (item.id == count) {
+                document.querySelector('#testOnImageHere').innerText = item.value;
+                document.querySelector('#image').src = "/carousel-images/" + item.id + ".jpg";
 
             }
         })
 
-    }, [count]
-    )
+    })
+
+
+
+
+
     return (
         <>
             <head>
@@ -69,17 +72,11 @@ export default function About() {
                 </div>
 
                 <div id="carouselImage" className={styles.carouselImage}>
-                    <img className={styles.image} src={"/carousel-images/0.jpg"} />
-                    {/* <img src={"/carousel-images/1.jpg"} />
-                    <img src={"/carousel-images/2.jpg"} />
-                    <img src={"/carousel-images/3.jpg"} />
-                    <img src={"/carousel-images/4.jpg"} />
-                    <img src={"/carousel-images/5.jpg"} /> */}
-
+                    <img id="image" className={styles.image} src={"/carousel-images/0.jpg"} />
                     <div className={styles.image_slide}>
-                        <img className={styles.arrows} onClick={count => setCount(count + 1)} src='icons/leftArrow.png'></img>
-                        <div id="testOnImageHere" className={styles.testOnImageHere}>{caption}</div>
-                        <img className={styles.arrows} onClick={count => setCount(count - 1)} src='icons/rightArrow.png'></img>
+                        <img className={styles.arrows} onClick={() => setCount(count - 1)} src='icons/leftArrow.png'></img>
+                        <div id="testOnImageHere" className={styles.testOnImageHere}>University</div>
+                        <img className={styles.arrows} onClick={() => setCount(count + 1)} src='icons/rightArrow.png'></img>
                     </div>
 
                 </div>

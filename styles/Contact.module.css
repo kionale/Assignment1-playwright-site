@@ -18,7 +18,7 @@
 .dividing_lines{
   width:25%;
   height:0.2rem;
-  background-color: var(--primary-cl);
+  background-color: var(--secondary-color);
   border:none;
   margin:0 4rem;
 
@@ -44,7 +44,7 @@
 }
 
 .fieldset{
-    border: 1px solid var(--dark-blue);
+    border: 1px solid var(-quaternary-color);
     padding:2rem;
 
 }

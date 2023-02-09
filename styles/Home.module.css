@@ -25,13 +25,12 @@
 .breakLine{
   width:75%;
   height:0.25rem;
-  background-color: var(--primary-cl);
+  background-color: var(--secondary-color);
   border:none;
 }
 
 .text{
 
-  font-family: var(--font-family);
   margin-top: 0.7rem;
 }
 
@@ -43,13 +42,13 @@
 
 .buttons{
   background-color: transparent;
-  color:var(--font-white);
+  color:var(--primary-color);
   padding:0.35rem 1rem;
   border: 2px solid white;
   border-radius: 0.5rem;
 }
 
 .buttons:hover{
-  background-color: var(--font-white);
+  background-color: var(--primary-color);
   color:black;
 }
