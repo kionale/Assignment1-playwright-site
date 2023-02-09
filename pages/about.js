@@ -55,8 +55,9 @@ export default function About() {
                         <hr className={styles.dividing_lines}></hr>
                         <h1 className={styles.heading}>About Us</h1>
                         <hr className={styles.dividing_lines}></hr>
+
                     </div>
-                    <div><h1></h1></div>
+
                 </header>
                 <div className={styles.content}>
                     <div><p className={styles.paragraph}>We are proud to deliver an education that goes beyond textbooks and classrooms.</p></div>
@@ -67,7 +68,7 @@ export default function About() {
                     <div><h2 className={styles.paragraph}>Big Info</h2></div>
                     <div><p className={styles.paragraph}>Big Info is the largest program expo and information session at BCIT. It's your chance to find out about all our programs - from business, computing, and health to engineering, trades, and applied sciences.</p></div>
                     <div><p className={styles.paragraph}>If you missed our fall event the next Big Info is scheduled to return on February 15, 2023</p></div>
-                    <div><h2 className={styles.paragraph}>Campus Tours</h2></div>
+                    <div><h3 className={styles.paragraph}>Campus Tours</h3></div>
                     <div><p className={styles.paragraph}>Tours run weekdays September to May, on our Burnaby campus. See BCIT in person and get a taste of campus life.</p></div>
                 </div>
 
