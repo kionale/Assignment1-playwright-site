@@ -99,6 +99,7 @@ export default function About() {
                 </div>
 
                 <Arrow page="About" />
+                <div className={styles.scroller}></div>
 
 
             </main>
