@@ -9,33 +9,48 @@ import ToggleMenu from '@/components/ToggleMenu'
 import { useState, useEffect } from 'react'
 import data from '../data/words.json'
 import next from 'next'
+import Slider from '@/components/Slider/Slider'
+
 
 export default function About() {
-    const [info, setInfo] = useState([...data]);
+
     const [count, setCount] = useState(0);
-    console.log(data);
+    const [info, setInfo] = useState([...data])
+    const [caption, setCaption] = useState('')
+    let imageSrc = `/carousel-images/${count}.jpg`
+
+
+
 
     useEffect(() => {
-        if (count > 4) {
-            setCount(0);
-        }
-        if (count < 0) {
-            setCount(4);
-        }
-
-        info && info.map((item) => {
-            if (item.id == count) {
-                document.querySelector('#testOnImageHere').innerText = item.value;
-                document.querySelector('#image').src = "/carousel-images/" + item.id + ".jpg";
-
+        // info here is the array of caption, text is an object of info
+        info && info.map((text, index) => {
+            console.log(count);
+            if (text.id == count) {
+                setCaption(text.value)
+                imageSrc = `/carousel-images/${count}.jpg`
             }
-        })
+        }
+        )
+    }, [count])
 
-    })
+    const prevSlide = () => {
+        if (count !== 0) {
+            setCount(count - 1)
+        }
+        else if (count === 0) {
+            setCount(data.length - 1)
+        }
+    }
 
-
-
-
+    const nextSlide = () => {
+        if (count !== data.length - 1) {
+            setCount(count + 1)
+        }
+        else if (count === data.length - 1) {
+            setCount(0)
+        }
+    }
 
     return (
         <>
@@ -73,17 +88,15 @@ export default function About() {
                 </div>
 
                 <div id="carouselImage" className={styles.carouselImage}>
-                    <img id="image" className={styles.image} src={"/carousel-images/0.jpg"} />
+                    <img id="image" className={styles.image} src={imageSrc} />
+
                     <div className={styles.image_slide}>
-                        <img className={styles.arrows} onClick={() => setCount(count - 1)} src='icons/leftArrow.png'></img>
-                        <div id="testOnImageHere" className={styles.testOnImageHere}>University</div>
-                        <img className={styles.arrows} onClick={() => setCount(count + 1)} src='icons/rightArrow.png'></img>
+                        <img className={styles.arrows} onClick={() => prevSlide()} src='icons/leftArrow.png'></img>
+                        <div id="testOnImageHere" className={styles.testOnImageHere}>{caption}</div>
+                        <img className={styles.arrows} onClick={() => nextSlide()} src='icons/rightArrow.png'></img>
                     </div>
-
+                    {/* <Slider /> */}
                 </div>
-
-
-
 
                 <div className={styles.departments}>
                     <hr className={styles.dividing_lines}></hr>

@@ -11,6 +11,7 @@ import ToggleMenu from '@/components/ToggleMenu'
 
 
 
+
 export default function Contact() {
 
     const [formData, setFormData] = useState({
@@ -20,42 +21,49 @@ export default function Contact() {
     })
 
 
+
+
     const placeholderFirst = "First name here";
     const placeholderLast = "Last name here"
     const placeholderEmail = "Email here"
-    const regex = new RegExp('^[A-Z]{1}[A-Za-z]*$');
+    const regexName = new RegExp('^[A-Z]{1}[A-Za-z]*$');
     const regexEmail = new RegExp('^[A-Za-z0-9]+@[A-Za-z0-9]+\\.[A-Za-z]{2,}$');
+    const [firstError, setFirst] = useState('')
+    const [lastError, setLast] = useState('')
+    const [emailError, setEmail] = useState('')
+    const [displayB, setDisplayB] = useState(false)
+
+    let errorMessage;
 
     useEffect(() => {
-        console.log(formData.email);
-        if (regex.test(formData.firstName)) {
-            document.querySelector("#firstNameError").innerText = "";
-        } else if (formData.firstName == "") {
-            document.querySelector("#firstNameError").innerText = "";
-        } else if (formData.firstName !== "" && regex.test(formData.firstName) == false) {
-            document.querySelector("#firstNameError").innerText = "First name error. First letter must be capital. Must use alphabets only.";
-        };
-        if (regex.test(formData.lastName)) {
-            document.querySelector("#lastNameError").innerText = "";
-        } else if (formData.lastName == "") {
-            document.querySelector("#lastNameError").innerText = "";
-        } else if (formData.lastName !== "" && regex.test(formData.lastName) == false) {
-            document.querySelector("#lastNameError").innerText = "Last name error. First letter must be capital. Must use alphabets only.";
-        };
-        if (regexEmail.test(formData.email)) {
-            document.querySelector("#emailError").innerText = "";
-        } else if (formData.email == "") {
-            document.querySelector("#emailError").innerText = "";
-        } else if (formData.email !== "" && regexEmail.test(formData.email) == false) {
-            document.querySelector("#emailError").innerText = "Email is invalid.";
-        };
-        if (regex.test(formData.firstName) && regex.test(formData.lastName) && regexEmail.test(formData.email)) {
-            document.querySelector("#button").style.visibility = "visible";
+
+        if (formData.firstName !== '' && regexName.test(formData.firstName) == false) {
+            setFirst(showError('First'));
         } else {
-            document.querySelector("#button").style.visibility = "hidden";
-        }
+            setFirst('');
+        };
+
+        if (formData.lastName !== '' && regexName.test(formData.lastName) == false) {
+            setLast(showError('Last'));
+        } else {
+            setLast('');
+        };
+
+        if (formData.email !== '' && regexEmail.test(formData.email) == false) {
+            setEmail('Invalid email');
+        } else {
+            setEmail('');
+        };
+
+        if (regexName.test(formData.firstName) && regexName.test(formData.lastName) && regexEmail.test(formData.email)) {
+            setDisplayB(true);
+        };
     })
 
+
+    const showError = (type) => {
+        return `${type} name error. First letter must be capital. Must use alphabets only. `
+    }
 
     return (
         <>
@@ -97,7 +105,7 @@ export default function Contact() {
                                                 type="text"
                                                 name="firstName"
                                                 onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-                                                pattern="[A-Z]{1}[a-z]{2,10}"
+                                                pattern={regexName}
                                                 placeholder={placeholderFirst}
                                                 minLength="3"
                                                 maxLength="25"
@@ -113,7 +121,7 @@ export default function Contact() {
                                                 type="text"
                                                 name="lastName"
                                                 onChange={(e => setFormData({ ...formData, lastName: e.target.value }))}
-                                                pattern="[A-Z]{1}[a-z]{2,10}"
+                                                pattern={regexName}
                                                 placeholder={placeholderLast}
                                                 minLength="3"
                                                 maxLength="25"
@@ -135,7 +143,7 @@ export default function Contact() {
                                                 type="text"
                                                 name="email"
                                                 onChange={(e => setFormData({ ...formData, email: e.target.value }))}
-                                                pattern="^[A-Za-z0-9]+@[A-Za-z0-9]+\\.[A-Za-z]{2,}$"
+                                                pattern={regexEmail}
                                                 title="Email is invalid"
                                                 placeholder={placeholderEmail}
                                                 minLength="3"
@@ -154,14 +162,16 @@ export default function Contact() {
                 </div>
 
 
-
                 <div className={styles.action_btn}>
-                    <Link href="/"><button type="submit" id="button" className={styles.button}> Submit</button></Link>
+                    {
+                        displayB ? <button type="submit" id="button" className={styles.button} > Submit</button> : <></>
+                    }
+
                 </div>
                 <div className={styles.errorMessage}>
-                    <h3 id="firstNameError"></h3>
-                    <h3 id="lastNameError"></h3>
-                    <h3 id="emailError"></h3>
+                    <h3 className={styles.firstNameError}>{firstError}</h3>
+                    <h3 className={styles.lastNameError}>{lastError}</h3>
+                    <h3 id="emailError">{emailError}</h3>
                 </div>
                 <Arrow page="Contact" />
             </main>
